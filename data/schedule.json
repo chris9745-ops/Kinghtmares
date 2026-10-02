@@ -1,0 +1,79 @@
+[
+  {
+    "date": "2026-10-10",
+    "start": "13:30",
+    "end": "14:30",
+    "opponent": "Engler",
+    "homeAway": "away",
+    "location": "Irwin Park",
+    "field": "Field 1",
+    "note": "",
+    "result": "",
+    "status": ""
+  },
+  {
+    "date": "2026-10-17",
+    "start": "12:00",
+    "end": "13:00",
+    "opponent": "Casale",
+    "homeAway": "away",
+    "location": "Irwin Park",
+    "field": "Field 1",
+    "note": "",
+    "result": "",
+    "status": ""
+  },
+  {
+    "date": "2026-10-24",
+    "start": "10:30",
+    "end": "11:30",
+    "opponent": "Samolovitch",
+    "homeAway": "home",
+    "location": "Irwin Park",
+    "field": "Field 2",
+    "note": "",
+    "result": "",
+    "status": ""
+  },
+  {
+    "date": "2026-10-31",
+    "start": "13:30",
+    "end": "14:30",
+    "opponent": "Allman",
+    "homeAway": "away",
+    "location": "Irwin Park",
+    "field": "Field 1",
+    "note": "",
+    "result": "",
+    "status": ""
+  },
+  {
+    "date": "2026-11-07",
+    "start": "13:30",
+    "end": "14:30",
+    "opponent": "Edmiston",
+    "homeAway": "home",
+    "location": "Irwin Park",
+    "field": "Field 1",
+    "note": "",
+    "result": "",
+    "status": ""
+  },
+  {
+    "date": "2026-11-14",
+    "type": "off",
+    "title": "No game this week"
+  },
+  {
+    "date": "2026-11-21",
+    "start": "12:00",
+    "end": "13:00",
+    "opponent": "Martz",
+    "homeAway": "away",
+    "location": "Irwin Park",
+    "field": "Field 2",
+    "note": "",
+    "result": "",
+    "status": ""
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "players": [
+    {
+      "name": "Jericho B.",
+      "number": ""
+    },
+    {
+      "name": "Blake C.",
+      "number": ""
+    },
+    {
+      "name": "Mason E.",
+      "number": ""
+    },
+    {
+      "name": "Benjamin F.",
+      "number": ""
+    },
+    {
+      "name": "Jaxon F.",
+      "number": ""
+    },
+    {
+      "name": "Milo L.",
+      "number": ""
+    },
+    {
+      "name": "Ayceson M.",
+      "number": ""
+    },
+    {
+      "name": "Bennett S.",
+      "number": ""
+    },
+    {
+      "name": "Jaxon S.",
+      "number": ""
+    },
+    {
+      "name": "Samuel S.",
+      "number": ""
+    },
+    {
+      "name": "Dominick V.",
+      "number": ""
+    }
+  ],
+  "coaches": [
+    {
+      "name": "Chris Langlais",
+      "role": "Head coach",
+      "phone": "719-640-9745",
+      "email": "chris@mysprings.net"
+    },
+    {
+      "name": "Ryan Fair",
+      "role": "Assistant coach",
+      "phone": "804-895-5582",
+      "email": "rfair.13@gmail.com"
+    }
+  ]
+}

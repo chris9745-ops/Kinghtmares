@@ -1,0 +1,20 @@
+[build]
+  command = "node scripts/build-calendar.js"
+  publish = "."
+
+# Keep the site out of Google and other search engines
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/calendar.ics"
+  [headers.values]
+    Content-Type = "text/calendar; charset=utf-8"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

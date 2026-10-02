@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Knightmares Flag Football</title>
+  <meta name="description" content="Schedule, roster and coach contacts for the Norwin Knightmares 5th and 6th grade flag football team.">
+  <meta name="theme-color" content="#0a1b3f">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏈</text></svg>">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="shards" aria-hidden="true">
+    <i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="s4"></i><i class="s5"></i><i class="s6"></i>
+  </div>
+  <div class="wrap hero-inner">
+    <p class="hero-kicker">Norwin flag football, 5th and 6th grade</p>
+    <h1>Knightmares</h1>
+
+    <div class="next" id="next-game" aria-live="polite">
+      <p class="next-label">Loading the schedule…</p>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <div class="wrap tabs-inner">
+    <a href="#schedule">Schedule</a>
+    <a href="#updates">Updates</a>
+    <a href="#uniform">Uniform</a>
+    <a href="#roster">Roster</a>
+    <a href="#coaches">Coaches</a>
+    <a href="#photos" id="photos-tab" hidden>Photos</a>
+  </div>
+</nav>
+
+<main>
+  <section id="schedule" class="wrap">
+    <h2>Schedule</h2>
+    <p class="lede">Every game is on Saturday at Irwin Park.</p>
+    <ol class="games" id="games"></ol>
+
+    <div class="subscribe" id="calendar">
+      <h3>Put the schedule on your phone</h3>
+      <p>Subscribe once and every game lands in your calendar. If a time or field changes, your calendar updates on its own.</p>
+      <div class="btn-row">
+        <a class="btn btn-gold" id="sub-apple" href="calendar.ics">iPhone or Mac</a>
+        <a class="btn btn-gold" id="sub-google" href="calendar.ics" target="_blank" rel="noopener">Google or Android</a>
+      </div>
+      <p class="fine">Google Calendar can take up to a day to pick up a change. For anything last minute, check this page.
+        Other calendar app? <a href="calendar.ics" download>Download the file</a>.</p>
+    </div>
+  </section>
+
+  <section id="updates" class="wrap">
+    <h2>Updates from the coaches</h2>
+    <div id="posts"></div>
+  </section>
+
+  <section id="uniform" class="wrap">
+    <h2>Our uniform</h2>
+    <p class="lede">Sleeveless hooded jersey, front and back, with each player's name and number.</p>
+    <figure class="uniform">
+      <img src="images/uniform.jpg" width="1448" height="1086" alt="Front and back of the navy Knightmares hooded jersey with gold, blue and white streaks, a knight helmet logo, and player name and number on the back.">
+    </figure>
+  </section>
+
+  <section id="roster" class="wrap">
+    <h2>Roster</h2>
+    <ul class="roster" id="players"></ul>
+  </section>
+
+  <section id="coaches" class="wrap">
+    <h2>Coaches</h2>
+    <p class="lede">Call or text if your player will miss a game.</p>
+    <div class="coaches" id="coach-list"></div>
+  </section>
+
+  <section id="photos" class="wrap" hidden>
+    <h2>Photos</h2>
+    <div class="gallery" id="gallery"></div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>Knightmares, Norwin 5/6 flag football, fall 2026.</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
