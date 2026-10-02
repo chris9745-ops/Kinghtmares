@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Order a jersey | Knightmares Flag Football</title>
+  <meta name="theme-color" content="#0a1b3f">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏈</text></svg>">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="page-head">
+  <div class="wrap">
+    <a href="index.html">Back to the team page</a>
+    <h1>Order a jersey</h1>
+  </div>
+</header>
+
+<main class="wrap order">
+  <p class="lede">One form per player. A coach will follow up with you about payment and pickup.</p>
+
+  <figure class="uniform order-img">
+    <img src="images/uniform.jpg" width="1448" height="1086" alt="Front and back of the navy Knightmares hooded jersey with player name and number on the back.">
+  </figure>
+
+  <!-- Netlify collects the submissions. See them in Netlify under Forms. -->
+  <form class="form" name="jersey-order" method="POST" action="/order-thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="jersey-order">
+    <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+    <fieldset>
+      <legend>Jersey</legend>
+
+      <div class="field">
+        <label for="player">Player's full name</label>
+        <input id="player" name="player" type="text" autocomplete="off" required>
+      </div>
+
+      <div class="field">
+        <label for="jersey-name">Name on the back
+          <span class="hint">Exactly as it should be printed. Usually the last name.</span>
+        </label>
+        <input class="jersey-name" id="jersey-name" name="name-on-jersey" type="text" maxlength="14" autocomplete="off" autocapitalize="characters" required>
+      </div>
+
+      <div class="field-pair">
+        <div class="field">
+          <label for="num1">Number, 1st choice</label>
+          <input id="num1" name="number-first-choice" type="number" inputmode="numeric" min="0" max="99" required>
+        </div>
+        <div class="field">
+          <label for="num2">2nd choice</label>
+          <input id="num2" name="number-second-choice" type="number" inputmode="numeric" min="0" max="99" required>
+        </div>
+      </div>
+      <p class="fine" style="margin:-0.3rem 0 1rem">Numbers are 0 to 99. If two players pick the same one, the first order in gets it.</p>
+
+      <div class="field">
+        <label for="size">Size</label>
+        <select id="size" name="size" required>
+          <option value="">Choose a size</option>
+          <option>Youth Small</option>
+          <option>Youth Medium</option>
+          <option>Youth Large</option>
+          <option>Youth XL</option>
+          <option>Adult Small</option>
+          <option>Adult Medium</option>
+          <option>Adult Large</option>
+          <option>Adult XL</option>
+        </select>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Parent or guardian</legend>
+
+      <div class="field">
+        <label for="parent">Your name</label>
+        <input id="parent" name="parent-name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="phone">Cell phone</label>
+        <input id="phone" name="parent-phone" type="tel" autocomplete="tel" inputmode="tel" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="parent-email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="notes">Anything we should know? <span class="hint">Optional. Sizing questions, an extra jersey for a sibling, and so on.</span></label>
+        <textarea id="notes" name="notes"></textarea>
+      </div>
+    </fieldset>
+
+    <button class="btn" type="submit">Send my order</button>
+  </form>
+</main>
+
+<footer class="wrap"><p>Knightmares, Norwin 5/6 flag football, fall 2026.</p></footer>
+</body>
+</html>
