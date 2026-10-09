@@ -65,11 +65,13 @@ for (const e of schedule) {
   const cancelled = (e.status || "").toLowerCase() === "cancelled";
   const title = e.title || "Knightmares vs " + e.opponent;
   const where = [e.location, e.field].filter(Boolean).join(", ");
-  const desc = [
-    e.homeAway ? (e.homeAway === "home" ? "Home team" : "Away team") : "",
-    e.note,
-    cancelled ? "" : "Mark your player In or Out: " + WHOS_IN,
-  ].filter(Boolean).join("\n");
+  const desc = cancelled
+    ? ["This game is cancelled.", e.note].filter(Boolean).join("\n")
+    : [
+        e.homeAway ? (e.homeAway === "home" ? "Home team" : "Away team") : "",
+        e.note,
+        "Mark your player In or Out: " + WHOS_IN,
+      ].filter(Boolean).join("\n");
   lines.push(
     "BEGIN:VEVENT",
     "UID:" + e.date + "-" + (e.opponent || e.title || "event").toLowerCase().replace(/[^a-z0-9]+/g, "-") + "@knightmares-flag",
@@ -81,7 +83,9 @@ for (const e of schedule) {
   );
   if (desc) lines.push("DESCRIPTION:" + esc(desc));
   lines.push("URL:" + (cancelled ? SITE + "/" : WHOS_IN));
-  lines.push("STATUS:" + (cancelled ? "CANCELLED" : "CONFIRMED"), "END:VEVENT");
+  // Cancelled games stay CONFIRMED on purpose: some calendar apps hide events marked
+  // STATUS:CANCELLED, and we want parents to see the cancellation in the title.
+  lines.push("STATUS:CONFIRMED", "END:VEVENT");
   count++;
 }
 lines.push("END:VCALENDAR");
