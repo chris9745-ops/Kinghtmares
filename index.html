@@ -29,11 +29,12 @@
 <nav class="tabs" aria-label="Sections">
   <div class="wrap tabs-inner">
     <a href="#schedule">Schedule</a>
+    <a href="#whos-in" id="avail-tab" hidden>Who's in</a>
     <a href="#updates">Updates</a>
     <a href="#uniform">Uniform</a>
-    <a href="order.html">Order jersey</a>
     <a href="#roster">Roster</a>
     <a href="#coaches">Coaches</a>
+    <a href="rules.html">Rules</a>
     <a href="#photos" id="photos-tab" hidden>Photos</a>
   </div>
 </nav>
@@ -56,6 +57,13 @@
     </div>
   </section>
 
+  <section id="whos-in" class="wrap" hidden>
+    <h2>Who's in</h2>
+    <p class="lede">Tap In or Out for your player. You can change it any time, and tapping the same button again clears it.</p>
+    <p class="avail-error" id="avail-error" role="alert" hidden></p>
+    <div id="avail"></div>
+  </section>
+
   <section id="updates" class="wrap">
     <h2>Updates from the coaches</h2>
     <div id="posts"></div>
@@ -65,9 +73,8 @@
     <h2>Our uniform</h2>
     <p class="lede">Sleeveless hooded jersey, front and back, with each player's name and number.</p>
     <figure class="uniform">
-      <img src="images/uniform.jpg" width="1448" height="1086" alt="Front and back of the navy Knightmares hooded jersey with gold, blue and white streaks, a knight helmet logo, and player name and number on the back.">
+      <img src="images/uniform-final.jpg" width="1448" height="1086" alt="Front and back of the navy Knightmares hooded jersey with gold and white lightning streaks, a knight helmet shield, and player name and number on the back.">
     </figure>
-    <div class="btn-row uniform-cta"><a class="btn" href="order.html">Order a jersey</a></div>
   </section>
 
   <section id="roster" class="wrap">
@@ -77,7 +84,7 @@
 
   <section id="coaches" class="wrap">
     <h2>Coaches</h2>
-    <p class="lede">Call or text if your player will miss a game.</p>
+    <p class="lede">Call or text if you have a question about anything.</p>
     <div class="coaches" id="coach-list"></div>
   </section>
 
@@ -88,9 +95,10 @@
 </main>
 
 <footer class="wrap">
-  <p>Knightmares, Norwin 5/6 flag football, fall 2026.</p>
+  <p>Knightmares, Norwin 5/6 flag football, fall 2026. <a href="rules.html">League rules</a></p>
 </footer>
 
 <script src="js/app.js"></script>
+<script type="module" src="js/availability.js"></script>
 </body>
 </html>
