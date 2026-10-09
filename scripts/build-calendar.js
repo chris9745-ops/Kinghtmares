@@ -6,6 +6,9 @@ const path = require("path");
 const root = path.join(__dirname, "..");
 const TEAM = "Knightmares Flag Football";
 const TZ = "America/New_York";
+// Each calendar event links back to the "Who's in" section of the site.
+const SITE = "https://knightmares.netlify.app";
+const WHOS_IN = SITE + "/#whos-in";
 
 // Every data file is parsed here so a typo fails the deploy
 // (Netlify then keeps the previous working version of the site live).
@@ -14,7 +17,7 @@ for (const f of ["team.json", "posts.json", "photos.json"]) {
 }
 const schedule = JSON.parse(fs.readFileSync(path.join(root, "data", "schedule.json"), "utf8"));
 
-const esc = (s) => String(s || "").replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\r?\n/g, "\\n");
+const esc = (s) => String(s || "").replace(/\\/g, "\\\\").replace(/;/g, "\;").replace(/,/g, "\\,").replace(/\r?\n/g, "\\n");
 const stamp = (date, time) => date.replace(/-/g, "") + "T" + time.replace(":", "") + "00";
 const fold = (line) => {
   const out = [];
@@ -62,7 +65,11 @@ for (const e of schedule) {
   const cancelled = (e.status || "").toLowerCase() === "cancelled";
   const title = e.title || "Knightmares vs " + e.opponent;
   const where = [e.location, e.field].filter(Boolean).join(", ");
-  const desc = [e.homeAway ? (e.homeAway === "home" ? "Home team" : "Away team") : "", e.note].filter(Boolean).join("\n");
+  const desc = [
+    e.homeAway ? (e.homeAway === "home" ? "Home team" : "Away team") : "",
+    e.note,
+    cancelled ? "" : "Mark your player In or Out: " + WHOS_IN,
+  ].filter(Boolean).join("\n");
   lines.push(
     "BEGIN:VEVENT",
     "UID:" + e.date + "-" + (e.opponent || e.title || "event").toLowerCase().replace(/[^a-z0-9]+/g, "-") + "@knightmares-flag",
@@ -73,6 +80,7 @@ for (const e of schedule) {
     "LOCATION:" + esc(where),
   );
   if (desc) lines.push("DESCRIPTION:" + esc(desc));
+  lines.push("URL:" + (cancelled ? SITE + "/" : WHOS_IN));
   lines.push("STATUS:" + (cancelled ? "CANCELLED" : "CONFIRMED"), "END:VEVENT");
   count++;
 }
