@@ -2,6 +2,10 @@
   command = "node scripts/build-calendar.js"
   publish = "."
 
+# The Firebase web API key is public by design. Tell Netlify's secret scanner to allow it.
+[build.environment]
+  SECRETS_SCAN_SMART_DETECTION_OMIT_VALUES = "AIzaSyAjiVCt8LtQ2XLeKK2ezX1NJ8vORkeHAdo"
+
 # Keep the site out of Google and other search engines
 [[headers]]
   for = "/*"
