@@ -1,49 +1,16 @@
 {
   "players": [
-    {
-      "name": "Jericho B.",
-      "number": ""
-    },
-    {
-      "name": "Blake C.",
-      "number": ""
-    },
-    {
-      "name": "Mason E.",
-      "number": ""
-    },
-    {
-      "name": "Benjamin F.",
-      "number": ""
-    },
-    {
-      "name": "Jaxon F.",
-      "number": ""
-    },
-    {
-      "name": "Milo L.",
-      "number": ""
-    },
-    {
-      "name": "Ayceson M.",
-      "number": ""
-    },
-    {
-      "name": "Bennett S.",
-      "number": ""
-    },
-    {
-      "name": "Jaxon S.",
-      "number": ""
-    },
-    {
-      "name": "Samuel S.",
-      "number": ""
-    },
-    {
-      "name": "Dominick V.",
-      "number": ""
-    }
+    { "name": "Jericho B.", "number": "2" },
+    { "name": "Blake C.", "number": "1" },
+    { "name": "Mason E.", "number": "33" },
+    { "name": "Benjamin F.", "number": "29" },
+    { "name": "Jaxon F.", "number": "" },
+    { "name": "Milo L.", "number": "24" },
+    { "name": "Ayceson M.", "number": "21" },
+    { "name": "Bennett S.", "number": "3" },
+    { "name": "Jaxon S.", "number": "7" },
+    { "name": "Samuel S.", "number": "12" },
+    { "name": "Dominick V.", "number": "28" }
   ],
 "coaches": [
     {
