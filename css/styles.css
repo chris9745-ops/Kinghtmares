@@ -6,11 +6,11 @@
 @font-face { font-family: "Barlow Condensed"; src: url("../fonts/barlow-condensed-latin-800-italic.woff2") format("woff2"); font-weight: 800; font-style: italic; font-display: swap; }
 
 :root {
-  --navy: #0a1b3f;
-  --navy-2: #12295c;
-  --gold: #f6b91c;
-  --blue: #1f8bff;
-  --volt: #d6f02a;
+  --navy: #06193a;
+  --navy-2: #1d3556;
+  --gold: #f1bd43;
+  --steel: #2f5389;
+  --silver: #dcdee2;
   --paper: #f2f4f8;
   --line: #d9deea;
   --ink: #0d1c3d;
@@ -33,7 +33,9 @@ body {
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 [hidden] { display: none !important; }
-:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+:focus-visible { outline: 3px solid var(--navy-2); outline-offset: 3px; border-radius: 4px; }
+.hero :focus-visible, .subscribe :focus-visible, .page-head :focus-visible, .reminders :focus-visible { outline-color: var(--gold); }
+.next :focus-visible { outline-color: var(--navy-2); }
 .wrap { width: min(100% - 2rem, 760px); margin-inline: auto; }
 
 /* ---------- Hero ---------- */
@@ -63,10 +65,10 @@ h1 {
   animation: slash 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 .s1 { background: var(--gold); width: 34%; height: 110px; right: -14%; top: -50px;  }
-.s2 { background: var(--blue); width: 60%; height: 190px; right: -24%; top: 120px;  animation-delay: 0.06s; opacity: 0.7; }
+.s2 { background: var(--steel); width: 60%; height: 190px; right: -24%; top: 120px;  animation-delay: 0.06s; opacity: 0.9; }
 .s3 { background: #fff;        width: 30%; height: 90px;  right: -4%;  top: 250px;  animation-delay: 0.12s; opacity: 0.9; }
-.s4 { background: var(--volt); width: 26%; height: 80px;  right: -8%;  top: 320px;  animation-delay: 0.18s; }
-.s5 { background: var(--blue); width: 50%; height: 150px; left: -22%;  bottom: -50px; animation-delay: 0.1s; opacity: 0.55; }
+.s4 { background: var(--silver); width: 26%; height: 80px;  right: -8%;  top: 320px;  animation-delay: 0.18s; }
+.s5 { background: var(--steel); width: 50%; height: 150px; left: -22%;  bottom: -50px; animation-delay: 0.1s; opacity: 0.55; }
 .s6 { background: var(--gold); width: 28%; height: 90px;  left: -8%;   bottom: -20px; animation-delay: 0.2s; opacity: 0.8; }
 @keyframes slash {
   from { transform: translate(-40px, 40px) scale(0.2); opacity: 0; }
@@ -104,7 +106,7 @@ h1 {
 .btn-ghost { background: transparent; color: var(--navy); }
 .btn-ghost:hover { background: #e6eaf3; }
 .btn-gold { background: var(--gold); border-color: var(--gold); color: var(--navy); }
-.btn-gold:hover { background: #ffcb45; }
+.btn-gold:hover { background: #f7cd6a; }
 
 /* ---------- Tabs ---------- */
 .tabs {
@@ -209,7 +211,7 @@ h3 { margin: 0 0 0.3rem; font: 700 1.5rem/1.1 var(--display); text-transform: up
 .avail-list li:first-child { border-top: 0; }
 .avail-who { min-width: 0; }
 .avail-name { display: flex; align-items: baseline; gap: 0.5rem; font-weight: 600; }
-.avail-name .num { font: 700 1.25rem/1 var(--display); color: var(--blue); min-width: 1.5rem; }
+.avail-name .num { font: 700 1.25rem/1 var(--display); color: var(--steel); min-width: 1.5rem; }
 .avail-when { display: block; font-size: 0.82rem; color: var(--muted); min-height: 1.1em; }
 .avail-btns { display: flex; flex: none; gap: 0.4rem; }
 .pick {
@@ -244,7 +246,7 @@ h3 { margin: 0 0 0.3rem; font: 700 1.5rem/1.1 var(--display); text-transform: up
   padding: 0.7rem 0.9rem; font-weight: 500;
   box-shadow: 0 1px 0 var(--line), 1px 0 0 var(--line);
 }
-.roster .num { font: 700 1.35rem/1 var(--display); color: var(--blue); min-width: 1.6rem; }
+.roster .num { font: 700 1.35rem/1 var(--display); color: var(--steel); min-width: 1.6rem; }
 
 /* ---------- Coaches ---------- */
 .coaches { display: grid; gap: 0.9rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
