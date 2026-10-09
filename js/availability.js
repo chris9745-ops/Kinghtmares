@@ -148,6 +148,8 @@ async function start() {
   paint();
   section.hidden = false;
   tab.hidden = false;
+  // Links from the calendar land on #whos-in before this section exists, so scroll to it now.
+  if (location.hash === "#whos-in") section.scrollIntoView();
 
   dbSdk.onValue(
     dbSdk.ref(db, "availability"),
