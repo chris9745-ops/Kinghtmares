@@ -15,6 +15,8 @@
   --line: #d9deea;
   --ink: #0d1c3d;
   --muted: #55607a;
+  --in: #146c43;
+  --out: #b3261e;
   --display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
   --body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -30,6 +32,7 @@ body {
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
+[hidden] { display: none !important; }
 :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
 .wrap { width: min(100% - 2rem, 760px); margin-inline: auto; }
 
@@ -130,7 +133,7 @@ h2::after {
   background: var(--gold); transform: skewX(-24deg);
 }
 h3 { margin: 0 0 0.3rem; font: 700 1.5rem/1.1 var(--display); text-transform: uppercase; }
-.lede { margin: 0.6rem 0 1.1rem; color: var(--muted); }
+.lede { margin: 0.6rem 0 1.1rem; color: var(--muted); max-width: 60ch; }
 .fine { font-size: 0.9rem; color: var(--muted); margin: 0.8rem 0 0; }
 .empty { color: var(--muted); }
 
@@ -163,7 +166,6 @@ h3 { margin: 0 0 0.3rem; font: 700 1.5rem/1.1 var(--display); text-transform: up
 .game.is-past .date span { color: #fff; }
 .game.is-past .game-who, .game.is-past .game-meta { color: var(--muted); }
 .game.is-cancelled .game-who span.vs, .game.is-cancelled .game-meta { text-decoration: line-through; }
-.game.is-off { grid-template-columns: 4.2rem 1fr; }
 .game.is-off .date { background: transparent; color: var(--muted); border: 1px dashed #b8c0d2; }
 .game.is-off .date span { color: var(--muted); }
 .game.is-off .game-who { font-weight: 500; color: var(--muted); }
@@ -176,6 +178,51 @@ h3 { margin: 0 0 0.3rem; font: 700 1.5rem/1.1 var(--display); text-transform: up
 .subscribe .fine { color: #aebada; margin: 0.9rem 0 0; }
 .subscribe .fine a { color: #fff; }
 
+/* ---------- Who's in ---------- */
+.avail-game { background: #fff; border: 1px solid var(--line); border-radius: 6px; margin-top: 0.7rem; }
+.avail-game summary {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.4rem 0.8rem;
+  padding: 0.85rem 0.9rem 0.85rem 2.2rem; cursor: pointer; list-style: none; position: relative;
+}
+.avail-game summary::-webkit-details-marker { display: none; }
+.avail-game summary::before {
+  content: ""; position: absolute; left: 0.95rem; top: 1.25rem;
+  width: 0.55rem; height: 0.55rem; border-right: 3px solid var(--navy); border-bottom: 3px solid var(--navy);
+  transform: rotate(-45deg);
+}
+.avail-game[open] summary::before { transform: rotate(45deg); top: 1.1rem; }
+.avail-game[open] summary { border-bottom: 1px solid var(--line); }
+.avail-head b { font: 700 1.35rem/1.1 var(--display); text-transform: uppercase; }
+.avail-head span { color: var(--muted); }
+.avail-counts { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.count {
+  padding: 0.1rem 0.5rem; border-radius: 3px; border: 1px solid var(--line);
+  font-size: 0.88rem; font-weight: 600; color: var(--muted); white-space: nowrap;
+}
+.count-in { background: var(--in); border-color: var(--in); color: #fff; }
+.count-out { background: #fff; border-color: var(--out); color: var(--out); }
+.avail-list { list-style: none; margin: 0; padding: 0; }
+.avail-list li {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+  padding: 0.5rem 0.9rem; border-top: 1px solid var(--line);
+}
+.avail-list li:first-child { border-top: 0; }
+.avail-who { min-width: 0; }
+.avail-name { display: flex; align-items: baseline; gap: 0.5rem; font-weight: 600; }
+.avail-name .num { font: 700 1.25rem/1 var(--display); color: var(--blue); min-width: 1.5rem; }
+.avail-when { display: block; font-size: 0.82rem; color: var(--muted); min-height: 1.1em; }
+.avail-btns { display: flex; flex: none; gap: 0.4rem; }
+.pick {
+  min-width: 4.3rem; min-height: 44px; padding: 0 0.5rem;
+  border: 2px solid #b8c0d2; border-radius: 6px; background: #fff; color: var(--ink);
+  font: 600 1rem/1 var(--body); cursor: pointer;
+}
+.pick:hover { border-color: var(--navy); }
+.pick-in[aria-pressed="true"] { background: var(--in); border-color: var(--in); color: #fff; }
+.pick-out[aria-pressed="true"] { background: var(--out); border-color: var(--out); color: #fff; }
+.pick[aria-pressed="true"]::before { content: "✓ "; }
+.avail-error { margin: 0 0 0.6rem; padding: 0.6rem 0.8rem; border-left: 6px solid var(--out); background: #fff; font-weight: 500; }
+
 /* ---------- Posts ---------- */
 .post { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 1rem 1.1rem; margin-top: 0.9rem; }
 .post time { color: var(--muted); font-size: 0.92rem; }
@@ -184,7 +231,7 @@ h3 { margin: 0 0 0.3rem; font: 700 1.5rem/1.1 var(--display); text-transform: up
 .post img { margin-top: 0.8rem; border-radius: 4px; }
 
 /* ---------- Uniform ---------- */
-.uniform { margin: 0; background: #f1f1f1; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.uniform { margin: 0; background: #d8d9db; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
 
 /* ---------- Roster ---------- */
 .roster {
@@ -197,7 +244,7 @@ h3 { margin: 0 0 0.3rem; font: 700 1.5rem/1.1 var(--display); text-transform: up
   padding: 0.7rem 0.9rem; font-weight: 500;
   box-shadow: 0 1px 0 var(--line), 1px 0 0 var(--line);
 }
-.roster .num { font: 700 1.35rem/1 var(--display); color: var(--blue); min-width: 1.4rem; }
+.roster .num { font: 700 1.35rem/1 var(--display); color: var(--blue); min-width: 1.6rem; }
 
 /* ---------- Coaches ---------- */
 .coaches { display: grid; gap: 0.9rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
@@ -216,6 +263,34 @@ h3 { margin: 0 0 0.3rem; font: 700 1.5rem/1.1 var(--display); text-transform: up
 
 footer { padding: 2.5rem 0 3rem; color: var(--muted); font-size: 0.92rem; }
 
+/* ---------- Inner pages (rules, jersey orders closed) ---------- */
+.page-head { background: var(--navy); color: #fff; padding: 1.4rem 0 1.6rem; border-bottom: 6px solid var(--gold); }
+.page-head a { color: #c9d4ee; font-weight: 500; text-underline-offset: 3px; }
+.page-head h1 { margin: 0.5rem 0 0; font-size: clamp(2.6rem, 12vw, 4.2rem); text-shadow: 0.05em 0.05em 0 var(--gold); }
+.thanks { padding: 2.5rem 0; }
+.thanks p { max-width: 55ch; }
+
+.rules { padding-top: 1.5rem; }
+.reminders {
+  background: var(--navy); color: #fff; border-radius: 6px;
+  padding: 1.1rem 1.1rem 1.2rem; margin-bottom: 1.2rem;
+}
+.reminders h2 { font-size: 1.9rem; }
+.reminders ul { margin: 0.8rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.35rem 1.2rem; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+.reminders li { padding-left: 1.5rem; position: relative; font-weight: 500; }
+.reminders li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); font-weight: 600; }
+.rule { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 1rem 1.1rem 1.1rem; margin-top: 0.9rem; }
+.rule h2 { font-size: 1.8rem; }
+.rule h3 { font-size: 1.2rem; margin: 0.9rem 0 0.2rem; }
+.rule ul { margin: 0.7rem 0 0; padding-left: 1.2rem; max-width: 65ch; }
+.rule h3 + ul { margin-top: 0.2rem; }
+.rule li { margin-top: 0.3rem; }
+.rule li::marker { color: var(--gold); }
+.rule p { margin: 0.7rem 0 0; max-width: 65ch; }
+.rule .key { font-weight: 600; }
+.sheet { margin: 1.4rem 0 0; }
+.sheet img { border: 1px solid var(--line); border-radius: 6px; }
+
 @media (min-width: 700px) {
   .hero { padding: 3.5rem 0 3.5rem; }
   .game { grid-template-columns: 4.6rem 1fr; padding: 1rem 1.2rem; }
@@ -224,30 +299,3 @@ footer { padding: 2.5rem 0 3rem; color: var(--muted); font-size: 0.92rem; }
   html { scroll-behavior: auto; }
   .shards i { animation: none; }
 }
-
-/* ---------- Jersey order page ---------- */
-.uniform-cta { margin-top: 0.9rem; }
-.page-head { background: var(--navy); color: #fff; padding: 1.4rem 0 1.6rem; border-bottom: 6px solid var(--gold); }
-.page-head a { color: #c9d4ee; font-weight: 500; text-underline-offset: 3px; }
-.page-head h1 { margin: 0.5rem 0 0; font-size: clamp(2.6rem, 12vw, 4.2rem); text-shadow: 0.05em 0.05em 0 var(--gold); }
-.order { padding-top: 1.5rem; }
-.order-img { margin: 0 0 1.4rem; }
-.form { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 1.2rem 1.1rem 1.4rem; }
-.form fieldset { border: 0; margin: 0 0 1.4rem; padding: 0; }
-.form legend { padding: 0; margin-bottom: 0.7rem; font: 700 1.5rem/1.1 var(--display); text-transform: uppercase; }
-.field { margin-bottom: 0.95rem; }
-.field label { display: block; font-weight: 600; margin-bottom: 0.25rem; }
-.field .hint { display: block; font-weight: 400; font-size: 0.9rem; color: var(--muted); }
-.field input, .field select, .field textarea {
-  width: 100%; min-height: 48px; padding: 0.6rem 0.7rem;
-  font: 400 1.05rem/1.3 var(--body); color: var(--ink);
-  background: #fff; border: 2px solid #b8c0d2; border-radius: 6px;
-}
-.field textarea { min-height: 90px; resize: vertical; }
-.field input:focus, .field select:focus, .field textarea:focus { outline: 3px solid var(--blue); outline-offset: 1px; border-color: var(--navy); }
-.field-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
-.jersey-name { text-transform: uppercase; }
-.hp { position: absolute; left: -9999px; }
-.form .btn { width: 100%; font-size: 1.1rem; min-height: 52px; cursor: pointer; }
-.thanks { padding: 2.5rem 0; }
-.thanks p { max-width: 55ch; }
