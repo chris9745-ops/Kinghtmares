@@ -7,6 +7,6 @@
     { "id": "mon_530", "label": "Monday, 5:30 PM" },
     { "id": "mon_630", "label": "Monday, 6:30 PM" },
     { "id": "wed_530", "label": "Wednesday, 5:30 PM" },
-    { "id": "wed_630", "label": "Wednesday, 6:30 PM" },
+    { "id": "wed_630", "label": "Wednesday, 6:30 PM" }
   ]
 }
