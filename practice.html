@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Practice time poll | Knightmares Flag Football</title>
+  <meta name="theme-color" content="#06193a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Knightmares practice time poll">
+  <meta property="og:description" content="Pick your player and check every practice time that works.">
+  <meta property="og:image" content="https://knightmares.netlify.app/images/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏈</text></svg>">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="page-head">
+  <div class="wrap">
+    <a href="index.html">Back to the team page</a>
+    <h1>Practice time poll</h1>
+  </div>
+</header>
+
+<main class="wrap poll">
+  <p class="lede" id="poll-question">Loading the poll…</p>
+  <p class="avail-error" id="poll-error" role="alert" hidden></p>
+
+  <form class="form poll-form" id="poll-form" hidden>
+    <div class="field">
+      <label for="poll-player">Your player</label>
+      <select id="poll-player" required>
+        <option value="">Choose your player</option>
+      </select>
+    </div>
+
+    <fieldset id="poll-options" disabled>
+      <legend>Times that work</legend>
+      <div class="checks" id="poll-checks"></div>
+    </fieldset>
+
+    <div class="field">
+      <label for="poll-note">Anything else? <span class="hint">Optional. For example "Tuesdays only after 6", or tell us if none of these work.</span></label>
+      <textarea id="poll-note" maxlength="200" disabled></textarea>
+    </div>
+
+    <button class="btn" type="submit" id="poll-save" disabled>Save</button>
+    <p class="fine poll-status" id="poll-status" aria-live="polite"></p>
+  </form>
+
+  <p class="poll-closed" id="poll-closed" hidden>This poll is closed. Thanks for answering. The results are below.</p>
+
+  <section class="poll-results" id="poll-results" hidden>
+    <h2>What works so far</h2>
+    <p class="lede" id="poll-count"></p>
+    <ol class="results" id="poll-tally"></ol>
+    <div id="poll-missing"></div>
+    <div id="poll-notes"></div>
+  </section>
+</main>
+
+<footer class="wrap"><p>Knightmares, Norwin 5/6 flag football, fall 2026.</p></footer>
+<script type="module" src="js/practice.js"></script>
+</body>
+</html>

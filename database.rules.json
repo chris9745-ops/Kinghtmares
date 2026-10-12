@@ -14,6 +14,22 @@
           "$other": { ".validate": false }
         }
       }
+    },
+    "practicePoll": {
+      ".read": true,
+      "$poll": {
+        ".validate": "$poll.matches(/^[a-z0-9_]{1,30}$/)",
+        "$player": {
+          ".write": true,
+          ".validate": "$player.matches(/^[a-z0-9_]{1,40}$/) && newData.hasChild('t') && (newData.hasChild('o') || newData.hasChild('n'))",
+          "o": {
+            "$option": { ".validate": "$option.matches(/^[a-z0-9_]{1,30}$/) && newData.val() === true" }
+          },
+          "n": { ".validate": "newData.isString() && newData.val().length <= 200" },
+          "t": { ".validate": "newData.val() === now" },
+          "$other": { ".validate": false }
+        }
+      }
     }
   }
 }

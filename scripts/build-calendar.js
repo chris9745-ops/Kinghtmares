@@ -12,8 +12,9 @@ const WHOS_IN = SITE + "/#whos-in";
 
 // Every data file is parsed here so a typo fails the deploy
 // (Netlify then keeps the previous working version of the site live).
-for (const f of ["team.json", "posts.json", "photos.json"]) {
-  JSON.parse(fs.readFileSync(path.join(root, "data", f), "utf8"));
+for (const f of ["team.json", "posts.json", "photos.json", "practice-poll.json"]) {
+  const file = path.join(root, "data", f);
+  if (fs.existsSync(file)) JSON.parse(fs.readFileSync(file, "utf8"));
 }
 const schedule = JSON.parse(fs.readFileSync(path.join(root, "data", "schedule.json"), "utf8"));
 
