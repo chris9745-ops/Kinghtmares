@@ -1,4 +1,28 @@
 [
+{
+  "date": "2026-10-16",
+  "title": "10 Offense Plays",
+  "body": "Here's 10 flag offense plays.",
+  "photo": "",
+  "file": "files/10plays.pdf",
+  "fileLabel": "Open the playbook"
+},
+  {
+  "date": "2026-10-16",
+  "title": "14 Offense Plays",
+  "body": "Here's 14 flag offense plays.",
+  "photo": "",
+  "file": "files/14plays.pdf",
+  "fileLabel": "Open the playbook"
+},
+  {
+  "date": "2026-10-16",
+  "title": "Defense Plays",
+  "body": "Here's Flag defense plays.",
+  "photo": "",
+  "file": "files/defense.pdf",
+  "fileLabel": "Open the playbook"
+},
   {
     "date": "2026-10-02",
     "title": "Welcome to the Knightmares team page",
