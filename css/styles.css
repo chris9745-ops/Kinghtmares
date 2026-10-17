@@ -231,6 +231,7 @@ h3 { margin: 0 0 0.3rem; font: 700 1.5rem/1.1 var(--display); text-transform: up
 .post h3 { margin-top: 0.15rem; text-transform: none; font-size: 1.6rem; }
 .post p { margin: 0.5rem 0 0; max-width: 62ch; white-space: pre-line; }
 .post img { margin-top: 0.8rem; border-radius: 4px; }
+.post-file { margin-top: 0.8rem; }
 
 /* ---------- Uniform ---------- */
 .uniform { margin: 0; background: #d8d9db; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
