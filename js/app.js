@@ -110,7 +110,9 @@
       var d = toDate(p.date);
       return '<article class="post"><time datetime="' + esc(p.date) + '">' + MONTHS_LONG[d.getMonth()] + " " + d.getDate() + "</time>" +
         "<h3>" + esc(p.title) + "</h3><p>" + esc(p.body) + "</p>" +
-        (p.photo ? '<img src="' + esc(p.photo) + '" alt="" loading="lazy">' : "") + "</article>";
+        (p.photo ? '<img src="' + esc(p.photo) + '" alt="" loading="lazy">' : "") +
+        (p.file ? '<div class="btn-row post-file"><a class="btn btn-ghost" href="' + esc(p.file) + '" target="_blank" rel="noopener">' +
+          esc(p.fileLabel || "Open the PDF") + "</a></div>" : "") + "</article>";
     }).join("");
   }
 
