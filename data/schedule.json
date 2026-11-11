@@ -24,16 +24,16 @@
     "status": "Cancelled"
   },
   {
-    "date": "2026-10-10",
+    "date": "2026-11-14",
     "start": "13:30",
     "end": "14:30",
     "opponent": "Engler",
     "homeAway": "away",
     "location": "Irwin Park",
     "field": "Field 1",
-    "note": "We will reschedule the game",
+    "note": "",
     "result": "",
-    "status": "Cancelled"
+    "status": ""
   },
   {
     "date": "2026-10-17",
